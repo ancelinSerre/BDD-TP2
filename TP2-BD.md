@@ -77,7 +77,10 @@ WHERE nomI = 'Patrick'
 
 7) Obtenir les *noms* des amis qui ont eu, **au moins une fois, un plat de leurs préférences**.
 ```sql
-
+SELECT DISTINCT R.nomI as amis 
+FROM repas.lemenu M NATURAL JOIN repas.lesrepas R 
+JOIN repas.lespreferences P ON P.nomA = R.nomi
+WHERE P.nomp = M.nomp;
 ```
 
 8) Obtenir les *noms* des invités qui **n'aiment que les desserts**.
@@ -86,6 +89,46 @@ WHERE nomI = 'Patrick'
 ```
 
 9) Obtenir les *noms* des amis qui **n'ont jamais eu un de leurs plats préférés**.
+```sql
+
+```
+
+10) Obtenir les *noms* des invités qui ont mangé **du foie gras, mais qui n'aiment pas cela**.
+```sql
+
+```
+
+11) Obtenir le *nombre de repas* auxquels chaque invité **a été convié**.
+```sql
+
+```
+
+12) Obtenir le *nombre moyen* d'invités **par repas**.
+```sql
+
+```
+
+13) Obtenir les *noms* des desserts qui ont été **servis au moins 2 fois**.
+```sql
+
+```
+
+14) Pour **l'(les) amis invité(s) le plus souven**t, donner son (leur) *nom* ainsi que ses (leurs) *plats préférés*.
+```sql
+
+```
+
+15) Obtenir les *noms* des amis qui **aiments tous les types de plats**, c'est-à-dire au moins **un plat de chaque type**.
+```sql
+
+```
+
+16) Pour chaque ami, donner le *nombre de repas* auxquels **il a été convié**.
+```sql
+
+```
+
+17) Notre maîtresse de maison décide qu'elle invitera à son prochain repas, qui aura lieu le 1er janvier 2010, tous les amis qui n'ont pas encore été invités. Former la requête qui prédit comment la table *lesRepas* sera mise à jour après le repas du 1er janvier 2010.
 ```sql
 
 ```

@@ -57,3 +57,14 @@ SELECT dateR, nomP AS plat, nomV AS vin
 FROM repas.lesrepas NATURAL JOIN repas.lemenu
 WHERE nomI = 'Patrick'
 
+-- (7) Obtenir les noms des amis qui ont eu, au moins une fois,
+--     un plat de leurs préférences.
+SELECT DISTINCT R.nomI as amis 
+FROM repas.lemenu M NATURAL JOIN repas.lesrepas R 
+JOIN repas.lespreferences P ON P.nomA = R.nomi
+WHERE P.nomp = M.nomp;
+
+-- (8) Obtenir les noms des invités qui n'aiment que les desserts.
+
+
+-- (9) Obtenir les noms des amis qui n'ont jamais eu un de leurs plats préférés.
